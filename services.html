@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopRock Global - Our Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Define custom colors as CSS variables */
+        :root {
+            --color-primary-dark: #011c40; /* Dark blue, main brand color */
+            --color-accent-red: #B9452A; /* Red accent */
+            --color-accent-blue: #2A5BB9; /* New blue accent */
+            --color-white: #FFFFFF;
+            --color-light-gray: #f0f0f0;
+            --color-dark-gray: #333333;
+            --color-medium-gray: #666666;
+            --color-border-light: #e0e0e0;
+
+            /* Neomorphic shadow variables */
+            --neumorph-base-color: #f0f0f0;
+            --neumorph-light-shadow: #ffffff;
+            --neumorph-dark-shadow: #d9d9d9;
+
+            --neumorph-shadow-outset: 8px 8px 16px var(--neumorph-dark-shadow), 
+                                     -8px -8px 16px var(--neumorph-light-shadow);
+            --neumorph-shadow-inset: inset 4px 4px 8px var(--neumorph-dark-shadow), 
+                                    inset -4px -4px 8px var(--neumorph-light-shadow);
+            --neumorph-pressed-color: #e0e0e0;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-dark-gray);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Forum', serif;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+        }
+
+        /* Header & Navigation - Clean with neomorphic buttons */
+        header {
+            background-color: var(--neumorph-base-color);
+            padding: 1rem 2rem;
+            box-shadow: var(--neumorph-shadow-outset);
+            border-bottom: 1px solid var(--color-border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav.container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        nav .logo-container img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        nav .logo-text {
+            font-family: 'Forum', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--color-primary-dark);
+            text-decoration: none;
+        }
+        nav #nav-toggle {
+            background: none;
+            border: none;
+            color: var(--color-primary-dark);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--neumorph-shadow-outset);
+            transition: all 0.3s ease;
+        }
+        nav #nav-toggle:hover {
+            box-shadow: var(--neumorph-shadow-inset);
+            background-color: var(--neumorph-pressed-color);
+        }
+        nav #nav-content {
+            width: 100%;
+            display: none;
+        }
+        nav #nav-content.block {
+            display: block;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            text-align: center;
+        }
+        nav ul.lg\:flex {
+            display: flex;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0.5rem 0;
+        }
+        nav ul li.mr-4 {
+            margin-right: 1rem;
+        }
+        nav a {
+            color: var(--color-dark-gray);
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            box-shadow: var(--neumorph-shadow-outset);
+            background-color: var(--neumorph-base-color);
+            font-family: 'Lato', sans-serif;
+        }
+        nav a:hover {
+            color: var(--color-accent-red);
+            box-shadow: var(--neumorph-shadow-inset);
+            background-color: var(--neumorph-pressed-color);
+        }
+        nav a:active {
+            box-shadow: var(--neumorph-shadow-inset);
+            background-color: var(--neumorph-pressed-color);
+        }
+        nav .dropdown-menu {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+            pointer-events: none;
+            position: absolute;
+            z-index: 50;
+            background-color: var(--neumorph-base-color);
+            box-shadow: var(--neumorph-shadow-outset);
+            border-radius: 0.75rem;
+            padding: 0.5rem 0;
+            min-width: 220px;
+            text-align: left;
+        }
+        nav .dropdown-menu.block {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        nav .dropdown-menu li a {
+            padding: 0.75rem 1.5rem;
+            display: block;
+            white-space: nowrap;
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+        nav .dropdown-menu li a:hover {
+            box-shadow: var(--neumorph-shadow-inset);
+            color: var(--color-accent-red);
+            background-color: var(--neumorph-pressed-color);
+        }
+
+        /* Modern Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(1, 28, 64, 0.9) 0%, rgba(42, 91, 185, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-white);
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-content p {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .hero-button {
+            display: inline-block;
+            background-color: var(--color-accent-blue);
+            color: var(--color-white);
+            padding: 1.2rem 3rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            font-family: 'Lato', sans-serif;
+        }
+        .hero-button:hover {
+            background-color: #1e4a9e;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+        .hero-button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .hero-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+            background-size: 400% 400%;
+            transition: background-position 0.6s ease;
+            border-radius: 0.75rem;
+        }
+        .hero-button:hover::after {
+            background-position: 100% 100%;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Grid Section */
+        .services-grid-section {
+            padding: 7rem 2rem;
+            background-color: var(--neumorph-base-color);
+        }
+        .services-grid-section h2 {
+            text-align: center;
+            font-size: 3.8rem;
+            margin-bottom: 5rem;
+            font-family: 'Forum', serif;
+        }
+        .services-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+        .central-logo-grid-item {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .central-logo-grid-item img {
+            max-width: 180px;
+            height: auto;
+        }
+        .service-card-flip-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            box-shadow: var(--neumorph-shadow-outset);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+            background-color: var(--color-white);
+        }
+        .service-card-flip-container:hover {
+            box-shadow: var(--neumorph-shadow-inset);
+            transform: translateY(-5px);
+        }
+        .service-card-flipper {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            position: relative;
+            border-radius: 1.5rem;
+        }
+        .service-card-flip-container:hover .service-card-flipper {
+            transform: rotateY(180deg);
+        }
+        .service-card-flip-container.flipped .service-card-flipper {
+            transform: rotateY(180deg);
+        }
+        .service-card-front, .service-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            background-color: var(--color-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .service-card-back {
+            transform: rotateY(180deg);
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+        .service-card-front .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--neumorph-shadow-inset);
+        }
+        .service-card-front .icon-wrapper i {
+            font-size: 2.5rem;
+            color: var(--color-white);
+        }
+        .service-card-front h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-primary-dark);
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .service-card-front p {
+            font-size: 0.95rem;
+            color: var(--color-medium-gray);
+            line-height: 1.5;
+            font-family: 'Lato', sans-serif;
+        }
+        .service-card-back h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .service-card-back p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Lato', sans-serif;
+        }
+        .service-card-back .back-button {
+            display: inline-block;
+            background-color: var(--color-accent-red);
+            color: var(--color-white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--neumorph-shadow-outset);
+            font-family: 'Lato', sans-serif;
+        }
+        .service-card-back .back-button:hover {
+            background-color: #A33A24;
+            box-shadow: var(--neumorph-shadow-inset);
+        }
+
+        /* Why Choose Us Carousel Section */
+        .why-choose-us-section {
+            padding: 7rem 0;
+            background-color: var(--neumorph-base-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-choose-us-section h2 {
+            text-align: center;
+            font-size: 3.8rem;
+            margin-bottom: 5rem;
+            font-family: 'Forum', serif;
+        }
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+        .carousel-item {
+            flex: 0 0 33.333%;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .why-choose-card {
+            background-color: var(--color-white);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: var(--neumorph-shadow-outset);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .why-choose-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neumorph-shadow-inset);
+        }
+        .why-choose-card .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--neumorph-shadow-inset);
+        }
+        .why-choose-card .icon-wrapper i {
+            font-size: 3rem;
+            color: var(--color-white);
+        }
+        .why-choose-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-primary-dark);
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .why-choose-card p {
+            font-size: 0.95rem;
+            color: var(--color-medium-gray);
+            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--neumorph-base-color);
+            border-radius: 50%;
+            margin: 0 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--neumorph-shadow-outset);
+        }
+        .dot.active {
+            background-color: var(--color-accent-red);
+            transform: scale(1.2);
+            box-shadow: var(--neumorph-shadow-inset);
+        }
+
+        /* Footer Section */
+        footer.site-footer {
+            background-color: var(--neumorph-base-color);
+            color: var(--color-dark-gray);
+            padding: 60px 20px;
+            font-size: 0.9em;
+            font-family: 'Lato', sans-serif;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-logo img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-column h4 {
+            color: var(--color-primary-dark);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-border-light);
+            font-family: 'Forum', serif;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            text-decoration: none;
+            color: var(--color-medium-gray);
+            transition: color 0.3s ease;
+            font-family: 'Lato', sans-serif;
+        }
+        .footer-column ul li a:hover {
+            color: var(--color-accent-red);
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border-light);
+            color: var(--color-medium-gray);
+            font-family: 'Lato', sans-serif;
+        }
+        .social-icons a {
+            color: var(--color-dark-gray);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+        .social-icons a:hover {
+            color: var(--color-accent-red);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .services-grid-section h2, 
+            .why-choose-us-section h2 {
+                font-size: 3rem;
+            }
+            .services-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .central-logo-grid-item {
+                grid-column: span 2;
+                grid-row: auto;
+                order: -1;
+            }
+            .carousel-item {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
+            }
+            nav ul.lg\:flex {
+                flex-direction: column;
+                width: 100%;
+            }
+            nav ul li.mr-4 {
+                margin-right: 0;
+            }
+            .hero-section {
+                min-height: 70vh;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .services-grid-section h2, 
+            .why-choose-us-section h2 {
+                font-size: 2.5rem;
+            }
+            .services-grid-container {
+                grid-template-columns: 1fr;
+            }
+            .central-logo-grid-item {
+                grid-column: auto;
+                grid-row: auto;
+                order: -1;
+            }
+            .carousel-item {
+                flex: 0 0 100%;
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <header>
+        <nav class="container mx-auto">
+            <div class="logo-container">
+                <img src="https://www.toprockglobal.com/wp-content/uploads/2024/11/Toprockglobal-logo.png" alt="TopRock Global Logo">
+                <span class="logo-text">TopRock Global</span>
+            </div>
+
+            <button id="nav-toggle" class="lg:hidden flex items-center px-3 py-2 focus:outline-none" type="button">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+
+            <div id="nav-content" class="hidden w-full lg:flex lg:items-center lg:w-auto">
+                <ul class="text-lg lg:flex-grow lg:flex lg:justify-end">
+                    <li class="mr-4"><a href="index.html">Home</a></li>
+                    <li class="relative group mr-4">
+                        <a href="services.html">Services <i class="fas fa-chevron-down text-sm ml-1"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#hr-solutions">HR Solutions</a></li>
+                            <li><a href="#finance-accounting">Finance & Accounting</a></li>
+                            <li><a href="#creative-marketing">Creative Marketing</a></li>
+                            <li><a href="#planning-design">Planning Design & Estimation</a></li>
+                            <li><a href="#administrative-support">Administrative</a></li>
+                            <li><a href="#curriculum-development">Curriculum Research & Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="mr-4"><a href="#">Our Verticals</a></li>
+                    <li class="relative group mr-4">
+                        <a href="about-us-team.html">About Us <i class="fas fa fa-chevron-down text-sm ml-1"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-us-team.html">About Us</a></li>
+                            <li><a href="#team-section">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="cta-button-nav">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Strategic Solutions for Your Business Growth</h1>
+                <p>At TopRock Global, we are dedicated to providing comprehensive and innovative services that empower businesses to achieve their full potential and navigate complex challenges with confidence.</p>
+                <a href="#services-overview" class="hero-button">Discover Our Services</a>
+            </div>
+        </section>
+
+        <section class="services-grid-section" id="services-overview">
+            <div class="container mx-auto">
+                <h2>Our Core Service Offerings</h2>
+                <div class="services-grid-container">
+                    <div class="service-card-flip-container" data-card-number="1" id="hr-solutions">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <h3>HR Solutions</h3>
+                                <p>Optimizing human potential with strategic HR management.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>HR Solutions</h3>
+                                <p>Talent acquisition, performance, and relations to build a productive workforce and foster positive environments.</p>
+                                <a href="service-hr.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-flip-container" data-card-number="2" id="finance-accounting">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3>Finance & Accounting</h3>
+                                <p>Financial clarity and strategic growth for your business.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Finance & Accounting</h3>
+                                <p>Comprehensive financial planning, bookkeeping, payroll, and analysis for fiscal health.</p>
+                                <a href="service-finance.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-flip-container" data-card-number="3" id="creative-marketing">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <h3>Creative & Marketing</h3>
+                                <p>Innovative strategies to elevate your brand and market presence.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Creative & Marketing</h3>
+                                <p>Compelling brand stories and digital campaigns to boost market share and recognition.</p>
+                                <a href="service-marketing.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-flip-container" data-card-number="4" id="planning-design">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <h3>Planning, Design & Estimation</h3>
+                                <p>Bringing your projects to life with meticulous planning and design.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Planning, Design & Estimation</h3>
+                                <p>Detailed planning, innovative design, and accurate estimation services for efficient project completion.</p>
+                                <a href="service-planning.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="central-logo-grid-item">
+                        <img src="https://www.toprockglobal.com/wp-content/uploads/2024/11/Toprockglobal-logo.png" alt="TopRock Global Logo">
+                    </div>
+
+                    <div class="service-card-flip-container" data-card-number="5" id="administrative-support">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3>Administrative Support</h3>
+                                <p>Streamlining operations for enhanced productivity and efficiency.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Administrative Support</h3>
+                                <p>Day-to-day task handling to free your team for core business activities and strategic initiatives.</p>
+                                <a href="service-admin.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-flip-container" data-card-number="6" id="curriculum-development">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-book-reader"></i>
+                                </div>
+                                <h3>Curriculum, Research, Dev. & Impl.</h3>
+                                <p>Expertise in developing impactful learning and knowledge transfer.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Curriculum, Research, Dev. & Impl.</h3>
+                                <p>Designing and implementing cutting-edge curricula and educational programs for continuous knowledge growth.</p>
+                                <a href="service-curriculum.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-flip-container" data-card-number="7" id="digital-transformation">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h3>Digital Transformation</h3>
+                                <p>Guiding your business through the digital age with innovative tech solutions.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Digital Transformation</h3>
+                                <p>Integrating cutting-edge technologies to enhance operations and deliver value, for increased efficiency and competitiveness.</p>
+                                <a href="service-digital.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-flip-container" data-card-number="8" id="business-advisory">
+                        <div class="service-card-flipper">
+                            <div class="service-card-front">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <h3>Business Advisory</h3>
+                                <p>Strategic counsel to navigate challenges and seize growth opportunities.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Business Advisory</h3>
+                                <p>Expert guidance on strategy, risk management, and operations to make informed decisions and achieve sustainable success.</p>
+                                <a href="service-advisory.html" class="back-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-us-section" id="why-choose-us">
+            <div class="container mx-auto">
+                <h2>Why Partner with TopRock Global?</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="why-choose-us-carousel-track">
+                        <div class="carousel-item">
+                            <div class="why-choose-card">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h3>Integrated Approach</h3>
+                                <p>Seamlessly integrated services from over 16 specialized departments for comprehensive solutions.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="why-choose-card">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <h3>Expert Team</h3>
+                                <p>A dedicated team of 100+ skilled professionals committed to delivering exceptional results.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="why-choose-card">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Proven Expertise</h3>
+                                <p>Years of experience and a track record of empowering businesses across diverse industries.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="why-choose-card">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3>Client-Focused</h3>
+                                <p>Tailored solutions designed to meet your unique needs and achieve specific objectives.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="why-choose-card">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3>Driving Growth</h3>
+                                <p>Strategic partnerships focused on fostering innovation and achieving sustainable growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="why-choose-us-carousel-dots"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container mx-auto">
+            <div class="footer-content">
+                <div class="footer-column footer-logo">
+                    <img src="https://www.toprockglobal.com/wp-content/uploads/2024/11/Toprockglobal-logo.png" alt="TopRock Global Logo">
+                    <p>One Partner, Endless Possibilities.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us-team.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Consulting Service</h4>
+                    <ul>
+                        <li><a href="#">Business Strategy</a></li>
+                        <li><a href="#">Process Optimization</a></li>
+                        <li><a href="#">Market Research</a></li>
+                        <li><a href="#">Business Analysis</a></li>
+                        <li><a href="#">Change Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Head Office Address</h4>
+                    <p>123 Global Street, Suite 456<br>Business City, BC 12345<br>Country</p>
+                    <p class="mt-4">Email: <a href="mailto:info@toprockglobal.com">info@toprockglobal.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    <h4 class="mt-4">Working Hours</h4>
+                    <p>Monday - Friday: 08 AM - 10 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TopRock Global. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.getElementById('nav-toggle').onclick = function () {
+            document.getElementById('nav-content').classList.toggle('hidden');
+            document.getElementById('nav-content').classList.toggle('block');
+        };
+
+        // Dropdown menu handling
+        document.querySelectorAll('.relative.group > a').forEach(button => {
+            if (window.innerWidth < 1024) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                        dropdownMenu.classList.toggle('block');
+                    }
+                });
+            } else {
+                const dropdownMenu = button.nextElementSibling;
+                if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                    button.parentElement.addEventListener('mouseenter', () => {
+                        dropdownMenu.classList.add('block');
+                    });
+                    button.parentElement.addEventListener('mouseleave', () => {
+                        dropdownMenu.classList.remove('block');
+                    });
+                }
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        window.addEventListener('click', function(e) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                const parentGroup = menu.closest('.relative.group');
+                if (parentGroup && !parentGroup.contains(e.target)) {
+                    menu.classList.remove('block');
+                }
+            });
+        });
+
+        // Card Flip functionality
+        document.querySelectorAll('.service-card-flip-container').forEach(card => {
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+            if (isTouchDevice) {
+                card.addEventListener('click', function(e) {
+                    if (e.target.closest('.back-button')) return;
+                    this.classList.toggle('flipped');
+                });
+            }
+        });
+
+        // Infinite Carousel Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('why-choose-us-carousel-track');
+            const dotsContainer = document.getElementById('why-choose-us-carousel-dots');
+            const items = Array.from(track.children);
+            const itemCount = items.length;
+            let currentIndex = 0;
+            let autoSlideInterval;
+            
+            // Create dots
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < itemCount; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+            
+            // Update dots
+            function updateDots(index) {
+                const dots = Array.from(dotsContainer.children);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+            
+            // Go to specific slide
+            function goToSlide(index) {
+                currentIndex = index;
+                updateDots(currentIndex);
+                track.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+            }
+            
+            // Move to next slide
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % itemCount;
+                updateDots(currentIndex);
+                track.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+            }
+            
+            // Start auto sliding
+            function startAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // Initialize
+            createDots();
+            startAutoSlide();
+            
+            // Pause on hover
+            track.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            track.addEventListener('mouseleave', startAutoSlide);
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                track.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+            });
+        });
+    </script>
+</body>
+</html>
