@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopRock Global - Redesigned Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/liZf/fztb3yL4qD/F3oY1zF3vG7p0/2Q0p3zP7Z6r4P6/W2f+Q2u7n3p2C5/gEw4W9aA3h5o7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        :root {
+            --color-dark-blue: #011c40;
+            --color-accent-red: #B9452A;
+            --color-white: #FFFFFF;
+            --color-light-gray: #f0f2f5; /
+        }
+
+        body {
+            font-family: 'Lato', sans-serif, 'Forum', serif;
+            background-color: var(--color-white); 
+            color: var(--color-dark-blue); 
+            line-height: 1.6; 
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-bold {
+            font-family: 'Forum', serif;
+        }
+
+        
+        .neomorphic-button {
+            background-color: var(--color-accent-white); 
+            color: var(--color-red); 
+            border-radius: 1rem; 
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+            
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.9);
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            border: none; 
+            cursor: pointer;
+        }
+        .neomorphic-button:hover {
+            background-color: #ffffff; 
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+            transform: translateY(-2px); 
+        }
+        .neomorphic-button:active {
+            background-color: #ffffff;             
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2), inset -3px -3px 6px rgba(255, 255, 255, 0.6);
+            transform: translateY(1px);
+        }
+
+        .neomorphic-button.white-bg {
+            background-color: var(--color-white);
+            color: var(--color-dark-blue);
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.9);
+        }
+        .neomorphic-button.white-bg:hover {
+            background-color: #f8f8f8; /* Very slight change */
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+        }
+        .neomorphic-button.white-bg:active {
+            background-color: #ececec;
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+        }
+
+
+        /* Neomorphic card styles */
+        .neomorphic-card {
+            background-color: var(--color-white); 
+            border-radius: 1.5rem;
+            padding: 2rem; 
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.07), -10px -10px 20px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+            display: flex; /* Flexbox for content alignment */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative; /* For potential pseudo-elements or absolute positioning */
+        }
+        .neomorphic-card:hover {
+            /* Slightly larger outer shadow on hover for a subtle lift effect */
+            box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.1), -12px -12px 25px rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px); /* Subtle lift on hover */
+        }
+
+        /* Hero section specific styles */
+        .hero-section {
+            position: relative;
+            height: calc(100vh - 80px); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align text to the left/center of its gradient */
+            color: var(--color-white); /* White text for contrast */
+            overflow: hidden; /* Ensure gradient doesn't overflow */
+            transition: background-image 1s ease-in-out; /* Smooth transition for background image */
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(1, 28, 64, 0.8) 0%, rgba(1, 28, 64, 0.8) 50%, rgba(1, 28, 64, 0.3) 75%, transparent 100%);
+            z-index: 1; 
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; 
+            padding: 2rem;
+            max-width: 600px; 
+            text-align: left;
+            margin-left: 5%; 
+        }
+
+        @media (min-width: 768px) { 
+            .hero-content {
+                margin-left: 10%; 
+            }
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-dark-blue);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffffff; 
+        }
+        .dropdown-menu {
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: all 0.3s ease-in-out;
+            pointer-events: none; 
+            position: absolute;
+            z-index: 50; 
+            background-color: var(--color-white);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-lg */
+            border-radius: 0.75rem; 
+            padding: 0.5rem 0; 
+        }
+
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            transform: scaleY(1);
+            pointer-events: auto; 
+        }
+
+        /* About Us Grid Section */
+        .about-us-grid-section {
+            padding: 6rem 1rem;
+            background-color: var(--color-white);
+        }
+
+        .about-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* At least 250px wide squares */
+            gap: 1rem; /* Space between grid items */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            position: relative;
+            min-height: 250px; /* Ensure a square-like aspect ratio */
+            border-radius: 1.5rem; /* Match neomorphic card radius */
+            overflow: hidden;
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05), -8px -8px 16px rgba(255, 255, 255, 0.8);
+            background-color: var(--color-white); /* Default for text squares */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--color-dark-blue);
+        }
+
+.grid-item.image-bg {
+    position: relative; /* Ensures child elements (like overlay) align properly */
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white); /* Text remains visible */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Overlay Styling */
+.grid-item.image-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.5 = 50% dark) */
+}
+.grid-item.image-bg h3, 
+.grid-item.image-bg p {
+    color: #fff; /* Sets text to pure white for better contrast */
+    position: relative; /* Ensures text stays above overlay */
+    z-index: 2; /* Keeps text visible */
+}
+        .grid-item h3 {
+            font-family: 'Forum', serif;
+            color: var(--color-accent-red); /* Use red for headings */
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-item p {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .grid-item.text-block-1 {
+            grid-column: span 1; 
+            grid-row: span 1;
+        }
+        .grid-item.text-block-2 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+        .grid-item.text-block-3 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+        .grid-item.text-block-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; 
+            text-align: left;
+            padding: 1.5rem;
+            background-color: var(--color-white); 
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05), -8px -8px 16px rgba(255, 255, 255, 0.8);
+            border-radius: 1.5rem;
+        }
+
+
+        /* Responsive grid sizes for larger screens */
+        @media (min-width: 768px) {
+            .about-grid-container {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns on medium screens */
+            }
+            .grid-item.text-block-1 {
+                grid-column: span 2; /* Occupy 2 columns */
+                grid-row: span 1;
+            }
+            .grid-item.text-block-2 {
+                grid-column: span 1;
+                grid-row: span 2; /* Occupy 2 rows */
+            }
+            .grid-item.text-block-3 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            /* The "Integrated Approach" block - now back to single column */
+            .grid-item.integrated-approach-block {
+                grid-column: span 2; /* Changed to 1 column */
+                grid-row: span 1;
+            }
+            /* The 'Ready to Grow' item - now a square */
+            .grid-item.ready-to-grow-block {
+                grid-column: span 1; /* Changed to 1 column */
+                grid-row: span 1;
+            }
+        }
+
+
+        /* Our Sister Concerns Layout with Logos */
+        .sister-concerns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax as needed */
+            gap: 20px;
+            justify-items: center; /* Center items within each grid cell */
+        }
+
+        .sister-concerns-grid .neomorphic-card {
+            flex-direction: column; /* Stack logo and text */
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .sister-concerns-grid .neomorphic-card img {
+            max-width: 80px; /* Adjust logo size */
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 50%; /* Ensure circular for these images */
+        }
+
+        /* Neomorphic Footer Styling */
+        footer.neomorphic-footer {
+            background-color: var(--color-white);
+            color: var(--color-dark-blue);
+            padding: 60px 0;
+            font-size: 0.9em;
+            box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.05), 0px 5px 15px rgba(255, 255, 255, 0.8);
+        }
+        .neomorphic-footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .neomorphic-footer .footer-logo img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .neomorphic-footer .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .neomorphic-footer .footer-column h4 {
+            color: var(--color-dark-blue);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(1, 28, 64, 0.1); /* Dark blue border */
+            padding-bottom: 10px;
+        }
+        .neomorphic-footer .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .neomorphic-footer .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .neomorphic-footer .footer-column ul li a {
+            text-decoration: none;
+            color: var(--color-dark-blue);
+            transition: color 0.3s ease;
+        }
+        .neomorphic-footer .footer-column ul li a:hover {
+            color: var(--color-accent-red); /* Accent red on hover */
+        }
+        .neomorphic-footer .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(1, 28, 64, 0.1);
+            color: var(--color-dark-blue);
+        }
+        .neomorphic-footer .footer-bottom a {
+             color: var(--color-dark-blue);
+        }
+        .neomorphic-footer .footer-bottom a:hover {
+            color: var(--color-accent-red);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .hero-section h1 {
+                font-size: 2.2em;
+            }
+            .hero-content {
+                margin-left: 2%; /* Less margin on smaller screens */
+                max-width: 90%;
+            }
+            .sister-concerns-grid {
+                grid-template-columns: 1fr; /* Stack columns on small screens */
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-column {
+                min-width: unset;
+                width: 100%;
+            }
+            .footer-column ul {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body class="leading-relaxed">
+    <header class="bg-white py-4 px-6 md:px-12 shadow-md relative z-50">
+        <nav class="container mx-auto flex items-center justify-between flex-wrap">
+            <div class="flex items-center flex-shrink-0 text-dark-blue mr-6">
+                <span class="font-bold text-2xl tracking-tight text-011c40">TopRock Global</span>
+            </div>
+
+            <div class="block lg:hidden">
+                <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-011c40 border-011c40 hover:text-gray-700 hover:border-gray-700">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button>
+            </div>
+
+            <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0">
+                <ul class="text-lg lg:flex-grow lg:flex lg:justify-end">
+                    <li><a href="index.html" class="block mt-4 lg:inline-block lg:mt-0 mr-8 neomorphic-button">Home</a></li>
+
+                    <li class="relative group">
+                        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 mr-8 neomorphic-button">Services <i class="fas fa-chevron-down text-sm ml-1"></i></a>
+                        <ul class="dropdown-menu w-64 mt-2">
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">HR</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Finance</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Creative Marketing</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Planning Design & Estimation</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Administrative</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Curriculum Research Development & Implementation</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="block mt-4 lg:inline-block lg:mt-0 mr-8 neomorphic-button">Our Verticals</a></li>
+
+                    <li class="relative group">
+                        <a href="about-us-team.html" class="block mt-4 lg:inline-block lg:mt-0 mr-8 neomorphic-button">About Us <i class="fas fa-chevron-down text-sm ml-1"></i></a>
+                        <ul class="dropdown-menu w-48 mt-2">
+                            <li><a href="about-us-team.html" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">About Us</a></li>
+                            <li><a href="#team-section" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">The Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="relative group">
+                        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 neomorphic-button">Contact Us <i class="fas fa-chevron-down text-sm ml-1"></i></a>
+                        <ul class="dropdown-menu w-48 mt-2">
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Contact Us</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-011c40 hover:bg-gray-100 rounded-md">Career</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero-slider">
+            <div class="hero-content">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-lg text-B9452A">TopRock Global:</h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">Your Partner for Growth & Innovation</h1>
+                <p class="text-lg md:text-xl mb-8 opacity-90">Empowering businesses with strategic talent and comprehensive solutions.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#" class="neomorphic-button">Our Services</a>
+                    <a href="#" class="neomorphic-button white-bg">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 bg-white">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-011c40 text-center mb-12">What We Do</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="neomorphic-card text-011c40 p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba06d1231a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Talent Acquisition Icon" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-B9452A object-cover mx-auto">
+                        <h3 class="font-semibold text-xl mb-2">Talent Acquisition</h3>
+                        <p class="text-sm text-gray-700">Connecting top talent with leading businesses for mutual growth.</p>
+                    </div>
+                    <div class="neomorphic-card text-011c40 p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965da0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Strategic Solutions Icon" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-B9452A object-cover mx-auto">
+                        <h3 class="font-semibold text-xl mb-2">Strategic Solutions</h3>
+                        <p class="text-sm text-gray-700">Customized strategies to optimize operations and boost efficiency.</p>
+                    </div>
+                    <div class="neomorphic-card text-011c40 p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1543269825-7d52675b31f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dedicated Partnership Icon" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-B9452A object-cover mx-auto">
+                        <h3 class="font-semibold text-xl mb-2">Dedicated Partnership</h3>
+                        <p class="text-sm text-gray-700">Your trusted ally, committed to achieving your business objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us-grid-section">
+            <div class="container mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-011c40 text-center mb-12">About TopRock Global</h2>
+                <div class="about-grid-container">
+                    <div class="grid-item image-bg" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                        <h3 class="text-2xl font-bold text-white">Our Vision</h3>
+                        <p class="text-white">To be the global leader in providing integrated business solutions.</p>
+                    </div>
+
+                    <div class="grid-item text-block-1 text-block-content">
+                        <h3 class="text-2xl font-bold text-B9452A">Empowering Businesses</h3>
+                        <p class="text-gray-700">Based in Chennai, TopRock Global is a dynamic service-oriented company with over 16 specialized departments and a team of 100+ talented professionals. We empower businesses to thrive by providing comprehensive solutions across various domains. Our commitment to excellence and innovation positions us as a leader in strategic support.</p>
+                    </div>
+
+                    <div class="grid-item image-bg" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                        <h3 class="text-2xl font-bold text-white">Strategic Growth</h3>
+                        <p class="text-white">Driving forward with cutting-edge strategies and robust implementation.</p>
+                    </div>
+
+                    <div class="grid-item text-block-3 text-block-content">
+                        <h3 class="text-2xl font-bold text-B9452A">Our Commitment</h3>
+                        <p class="text-gray-700">At TopRock Global, our success is intrinsically linked to the success of our clients. We continuously invest in our team's expertise and leverage cutting-edge methodologies to deliver solutions that are not just effective but also forward-thinking.</p>
+                    </div>
+
+                    <div class="grid-item text-block-2 text-block-content">
+                        <h3 class="text-2xl font-bold text-B9452A">Core Specializations</h3>
+                        <p class="text-gray-700">We specialize in areas like **creative marketing**, **finance**, **human resources**, **administrative services**, and meticulous **audits**. Our holistic approach ensures that every aspect of your business operations is optimized for peak performance and sustainable growth.</p>
+                        <p class="text-gray-700 mt-4">We believe in building strong, lasting partnerships, working hand-in-hand with our clients to navigate complexities and unlock new opportunities.</p>
+                    </div>
+
+<div class="grid-item image-bg" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                        <h3 class="text-2xl font-bold text-white">Digital Transformation</h3>
+                        <p class="text-white">Embracing technology for future-proof solutions.</p>
+                    </div>
+
+<div class="grid-item ready-to-grow-block text-block-content !justify-center !text-center !items-center">
+                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Ready to Grow?</h3>
+                        <p class="mb-4">Discover how our integrated services can transform your business.</p>
+                        <a href="#" class="neomorphic-button">Explore Services</a>
+                    </div>
+
+                    <div class="grid-item image-bg" style="background-image: url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                        <h3 class="text-2xl font-bold text-white">Client-Centric</h3>
+                        <p class="text-white">Our clients are at the heart of everything we do.</p>
+                    </div>
+
+                    <div class="grid-item integrated-approach-block text-block-content">
+                        <h3 class="text-2xl font-bold text-B9452A">Integrated Approach</h3>
+                        <p class="text-gray-700">What sets us apart is our seamless, end-to-end integration. With 16+ specialized departments under one roof, we eliminate silos, ensuring cohesive strategy execution and optimized results across all facets of your business.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 bg-white">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-011c40 text-center mb-12">Our Sister Concerns</h2>
+                <div class="grid sister-concerns-grid">
+                    <div class="neomorphic-card p-6">
+                        <img src="https://images.unsplash.com/photo-1560447330-d4775d5e561a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Top Rock Interior Fit-Outs Logo" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-011c40 object-cover mx-auto">
+                        <h3 class="font-semibold text-xl mt-2 mb-2 text-011c40">Top Rock Interior Fit-Outs</h3>
+                        <p class="text-sm text-gray-700 text-center">Crafting inspiring spaces with precision and style.</p>
+                    </div>
+                    <div class="neomorphic-card p-6">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Restaurant Chains Logo" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-011c40 object-cover rounded-full">
+                        <h3 class="font-semibold text-xl mt-2 mb-2 text-011c40">Restaurant Chains</h3>
+                        <p class="text-sm text-gray-700 text-center">Delivering diverse culinary experiences across multiple brands.</p>
+                    </div>
+                    <div class="neomorphic-card p-6">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f05e984?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="CMIS Logo" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-011c40 object-cover rounded-full">
+                        <h3 class="font-semibold text-xl mt-2 mb-2 text-011c40">CMIS</h3>
+                        <p class="text-sm text-gray-700 text-center">Comprehensive Management Information Systems.</p>
+                    </div>
+                    <div class="neomorphic-card p-6">
+                        <img src="https://images.unsplash.com/photo-1532187640247-495805e3f436?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lab of Future Logo" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-011c40 object-cover rounded-full">
+                        <h3 class="font-semibold text-xl mt-2 mb-2 text-011c40">Lab of Future</h3>
+                        <p class="text-sm text-gray-700 text-center">(Space Explorers) Pioneering innovation for tomorrow's world.</p>
+                    </div>
+                    <div class="neomorphic-card p-6">
+                        <img src="https://images.unsplash.com/photo-1546410531-d37537651817?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Podusu Logo" class="w-24 h-24 mb-4 rounded-full shadow-lg border-2 border-011c40 object-cover rounded-full">
+                        <h3 class="font-semibold text-xl mt-2 mb-2 text-011c40">Podusu</h3>
+                        <p class="text-sm text-gray-700 text-center">(Pre-kid school) Nurturing young minds for a bright future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="neomorphic-footer">
+        <div class="container mx-auto px-6">
+            <div class="footer-content">
+                <div class="footer-column footer-logo">
+                    <img src="https://www.toprockglobal.com/wp-content/uploads/2024/11/Toprockglobal-logo.png" alt="TopRock Global Logo">
+                    <p>One Partner, Endless Possibilities.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us-team.html">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Global Street, Suite 456<br>Business City, BC 12345<br>Country</p>
+                    <p>Email: <a href="mailto:info@toprockglobal.com">info@toprockglobal.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TopRock Global. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.getElementById('nav-toggle').onclick = function () {
+            document.getElementById('nav-content').classList.toggle('hidden');
+        };
+
+        // Dropdown menu handling for mobile (optional, but good for touch devices)
+        document.querySelectorAll('.relative.group > .neomorphic-button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                if (this.querySelector('.fa-chevron-down')) {
+                    event.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                        dropdownMenu.classList.toggle('opacity-0');
+                        dropdownMenu.classList.toggle('scale-y-0');
+                        dropdownMenu.classList.toggle('pointer-events-none');
+                        dropdownMenu.classList.toggle('opacity-100');
+                        dropdownMenu.classList.toggle('scale-y-100');
+                        dropdownMenu.classList.toggle('pointer-events-auto');
+                    }
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        window.addEventListener('click', function(e) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                const parentGroup = menu.closest('.relative.group');
+                if (parentGroup && !parentGroup.contains(e.target)) {
+                    menu.classList.add('opacity-0', 'scale-y-0', 'pointer-events-none');
+                    menu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
+                }
+            });
+        });
+
+        // Hero Section Image Slider
+        const heroSection = document.getElementById('hero-slider');
+        const heroImages = [
+            'https://images.unsplash.com/photo-1549923746-c50d53c8197b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Teamwork
+            'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Meeting room
+            'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Office collaboration
+            'https://images.unsplash.com/photo-1497215729969-940d5cd0f667?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Modern office
+        ];
+        let currentImageIndex = 0;
+
+        function changeHeroImage() {
+            heroSection.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        }
+
+        // Initial image load
+        changeHeroImage();
+        // Change image every 7 seconds
+        setInterval(changeHeroImage, 7000);
+    </script>
+</body>
+</html>
