@@ -14,7 +14,7 @@
             --color-dark-blue: #011c40;
             --color-accent-red: #B9452A;
             --color-white: #FFFFFF;
-            --color-light-gray: #f0f2f5; /
+            --color-light-gray: #f0f2f5; 
         }
 
         body {
@@ -61,36 +61,30 @@
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.9);
         }
         .neomorphic-button.white-bg:hover {
-            background-color: #f8f8f8; /* Very slight change */
+            background-color: #f8f8f8;
             box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
         }
         .neomorphic-button.white-bg:active {
             background-color: #ececec;
             box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7);
         }
-
-
-        /* Neomorphic card styles */
         .neomorphic-card {
             background-color: var(--color-white); 
             border-radius: 1.5rem;
             padding: 2rem; 
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.07), -10px -10px 20px rgba(255, 255, 255, 0.8);
             transition: all 0.3s ease-in-out;
-            display: flex; /* Flexbox for content alignment */
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative; /* For potential pseudo-elements or absolute positioning */
+            position: relative; 
         }
         .neomorphic-card:hover {
-            /* Slightly larger outer shadow on hover for a subtle lift effect */
             box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.1), -12px -12px 25px rgba(255, 255, 255, 0.9);
-            transform: translateY(-3px); /* Subtle lift on hover */
+            transform: translateY(-3px); 
         }
-
-        /* Hero section specific styles */
         .hero-section {
             position: relative;
             height: calc(100vh - 80px); 
@@ -98,12 +92,11 @@
             background-position: center;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Align text to the left/center of its gradient */
-            color: var(--color-white); /* White text for contrast */
-            overflow: hidden; /* Ensure gradient doesn't overflow */
-            transition: background-image 1s ease-in-out; /* Smooth transition for background image */
+            justify-content: flex-start; 
+            color: var(--color-white); 
+            overflow: hidden; 
+            transition: background-image 1s ease-in-out; 
         }
-
         .hero-section::before {
             content: '';
             position: absolute;
@@ -114,7 +107,6 @@
             background: linear-gradient(to right, rgba(1, 28, 64, 0.8) 0%, rgba(1, 28, 64, 0.8) 50%, rgba(1, 28, 64, 0.3) 75%, transparent 100%);
             z-index: 1; 
         }
-
         .hero-content {
             position: relative;
             z-index: 2; 
@@ -123,14 +115,11 @@
             text-align: left;
             margin-left: 5%; 
         }
-
         @media (min-width: 768px) { 
             .hero-content {
                 margin-left: 10%; 
             }
         }
-
-        /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -139,7 +128,7 @@
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--color-dark-blue);
+            background: var(--color-dark-white);
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -154,7 +143,7 @@
             position: absolute;
             z-index: 50; 
             background-color: var(--color-white);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
             border-radius: 0.75rem; 
             padding: 0.5rem 0; 
         }
@@ -164,8 +153,6 @@
             transform: scaleY(1);
             pointer-events: auto; 
         }
-
-        /* About Us Grid Section */
         .about-us-grid-section {
             padding: 6rem 1rem;
             background-color: var(--color-white);
@@ -173,19 +160,19 @@
 
         .about-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* At least 250px wide squares */
-            gap: 1rem; /* Space between grid items */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem; 
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .grid-item {
             position: relative;
-            min-height: 250px; /* Ensure a square-like aspect ratio */
-            border-radius: 1.5rem; /* Match neomorphic card radius */
+            min-height: 250px; 
+            border-radius: 1.5rem; 
             overflow: hidden;
             box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05), -8px -8px 16px rgba(255, 255, 255, 0.8);
-            background-color: var(--color-white); /* Default for text squares */
+            background-color: var(--color-white);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -195,33 +182,33 @@
             color: var(--color-dark-blue);
         }
 
-.grid-item.image-bg {
-    position: relative; /* Ensures child elements (like overlay) align properly */
-    background-size: cover;
-    background-position: center;
-    color: var(--color-white); /* Text remains visible */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
+        .grid-item.image-bg {
+           position: relative; 
+           background-size: cover;
+           background-position: center;
+           color: var(--color-white);
+           text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
 
-/* Overlay Styling */
-.grid-item.image-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.5 = 50% dark) */
-}
-.grid-item.image-bg h3, 
-.grid-item.image-bg p {
-    color: #fff; /* Sets text to pure white for better contrast */
-    position: relative; /* Ensures text stays above overlay */
-    z-index: 2; /* Keeps text visible */
+
+        .grid-item.image-bg::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+      }
+    .grid-item.image-bg h3, 
+     .grid-item.image-bg p {
+    color: #fff;
+    position: relative;
+    z-index: 2;
 }
         .grid-item h3 {
             font-family: 'Forum', serif;
-            color: var(--color-accent-red); /* Use red for headings */
+            color: var(--color-accent-red); 
             margin-bottom: 0.5rem;
         }
 
@@ -253,60 +240,51 @@
             box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05), -8px -8px 16px rgba(255, 255, 255, 0.8);
             border-radius: 1.5rem;
         }
-
-
-        /* Responsive grid sizes for larger screens */
+       
         @media (min-width: 768px) {
             .about-grid-container {
-                grid-template-columns: repeat(4, 1fr); /* 4 columns on medium screens */
+                grid-template-columns: repeat(4, 1fr);
             }
             .grid-item.text-block-1 {
-                grid-column: span 2; /* Occupy 2 columns */
+                grid-column: span 2; 
                 grid-row: span 1;
             }
             .grid-item.text-block-2 {
                 grid-column: span 1;
-                grid-row: span 2; /* Occupy 2 rows */
+                grid-row: span 2; 
             }
             .grid-item.text-block-3 {
                 grid-column: span 1;
                 grid-row: span 1;
             }
-            /* The "Integrated Approach" block - now back to single column */
             .grid-item.integrated-approach-block {
-                grid-column: span 2; /* Changed to 1 column */
+                grid-column: span 2;
                 grid-row: span 1;
             }
-            /* The 'Ready to Grow' item - now a square */
             .grid-item.ready-to-grow-block {
-                grid-column: span 1; /* Changed to 1 column */
+                grid-column: span 1; 
                 grid-row: span 1;
             }
         }
-
-
-        /* Our Sister Concerns Layout with Logos */
         .sister-concerns-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax as needed */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
-            justify-items: center; /* Center items within each grid cell */
+            justify-items: center;
         }
 
         .sister-concerns-grid .neomorphic-card {
-            flex-direction: column; /* Stack logo and text */
+            flex-direction: column; 
             align-items: center;
             padding: 1.5rem;
         }
 
         .sister-concerns-grid .neomorphic-card img {
-            max-width: 80px; /* Adjust logo size */
+            max-width: 80px; 
             height: auto;
             margin-bottom: 1rem;
-            border-radius: 50%; /* Ensure circular for these images */
+            border-radius: 50%; 
         }
-
-        /* Neomorphic Footer Styling */
         footer.neomorphic-footer {
             background-color: var(--color-white);
             color: var(--color-dark-blue);
@@ -332,7 +310,7 @@
             color: var(--color-dark-blue);
             font-size: 1.1em;
             margin-bottom: 20px;
-            border-bottom: 1px solid rgba(1, 28, 64, 0.1); /* Dark blue border */
+            border-bottom: 1px solid rgba(1, 28, 64, 0.1); 
             padding-bottom: 10px;
         }
         .neomorphic-footer .footer-column ul {
@@ -349,7 +327,7 @@
             transition: color 0.3s ease;
         }
         .neomorphic-footer .footer-column ul li a:hover {
-            color: var(--color-accent-red); /* Accent red on hover */
+            color: var(--color-accent-red); 
         }
         .neomorphic-footer .footer-bottom {
             text-align: center;
@@ -364,8 +342,6 @@
         .neomorphic-footer .footer-bottom a:hover {
             color: var(--color-accent-red);
         }
-
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -383,11 +359,11 @@
                 font-size: 2.2em;
             }
             .hero-content {
-                margin-left: 2%; /* Less margin on smaller screens */
+                margin-left: 2%; 
                 max-width: 90%;
             }
             .sister-concerns-grid {
-                grid-template-columns: 1fr; /* Stack columns on small screens */
+                grid-template-columns: 1fr; 
             }
             .footer-content {
                 flex-direction: column;
@@ -620,12 +596,9 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
         document.getElementById('nav-toggle').onclick = function () {
             document.getElementById('nav-content').classList.toggle('hidden');
         };
-
-        // Dropdown menu handling for mobile (optional, but good for touch devices)
         document.querySelectorAll('.relative.group > .neomorphic-button').forEach(button => {
             button.addEventListener('click', function(event) {
                 if (this.querySelector('.fa-chevron-down')) {
@@ -642,8 +615,6 @@
                 }
             });
         });
-
-        // Close dropdowns when clicking outside
         window.addEventListener('click', function(e) {
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 const parentGroup = menu.closest('.relative.group');
@@ -653,14 +624,12 @@
                 }
             });
         });
-
-        // Hero Section Image Slider
         const heroSection = document.getElementById('hero-slider');
         const heroImages = [
-            'https://images.unsplash.com/photo-1549923746-c50d53c8197b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Teamwork
-            'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Meeting room
-            'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Office collaboration
-            'https://images.unsplash.com/photo-1497215729969-940d5cd0f667?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Modern office
+            'https://images.unsplash.com/photo-1549923746-c50d53c8197b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+            'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+            'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+            'https://images.unsplash.com/photo-1497215729969-940d5cd0f667?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
         ];
         let currentImageIndex = 0;
 
@@ -668,10 +637,7 @@
             heroSection.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
             currentImageIndex = (currentImageIndex + 1) % heroImages.length;
         }
-
-        // Initial image load
         changeHeroImage();
-        // Change image every 7 seconds
         setInterval(changeHeroImage, 7000);
     </script>
 </body>
