@@ -115,6 +115,46 @@
             text-align: left;
             margin-left: 5%; 
         }
+                .hero-button {
+            display: inline-block;
+            background-color: var(--color-accent-blue);
+            color: var(--color-white);
+            padding: 1.2rem 3rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            font-family: 'Lato', sans-serif;
+        }
+        .hero-button:hover {
+            background-color: #1e4a9e;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+        .hero-button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .hero-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+            background-size: 400% 400%;
+            transition: background-position 0.6s ease;
+            border-radius: 0.75rem;
+        }
+        .hero-button:hover::after {
+            background-position: 100% 100%;
+        }
         @media (min-width: 768px) { 
             .hero-content {
                 margin-left: 10%; 
@@ -438,8 +478,8 @@
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">Your Partner for Growth & Innovation</h1>
                 <p class="text-lg md:text-xl mb-8 opacity-90">Empowering businesses with strategic talent and comprehensive solutions.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#" class="neomorphic-button">Our Services</a>
-                    <a href="#" class="neomorphic-button white-bg">Contact Us</a>
+                    <a href="#" class="hero-button">Our Services</a>
+                    <a href="#" class="hero-button">Contact Us</a>
                 </div>
             </div>
         </section>
