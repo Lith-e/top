@@ -22,12 +22,6 @@
             --neumorph-base-color: #f0f0f0;
             --neumorph-light-shadow: #ffffff;
             --neumorph-dark-shadow: #d9d9d9;
-
-            --neumorph-shadow-outset: 8px 8px 16px var(--neumorph-dark-shadow), 
-                                     -8px -8px 16px var(--neumorph-light-shadow);
-            --neumorph-shadow-inset: inset 4px 4px 8px var(--neumorph-dark-shadow), 
-                                    inset -4px -4px 8px var(--neumorph-light-shadow);
-            --neumorph-pressed-color: #e0e0e0;
         }
         body {
             font-family: 'Lato', sans-serif;
@@ -42,9 +36,7 @@
             font-family: 'Forum', serif;
             font-weight: 700;
             color: var(--color-primary-dark);
-        }
-
-      
+        }   
      .neomorphic-button {
             background-color: var(--color-accent-white);
             color: var(--color-red);
@@ -77,7 +69,7 @@
             box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1), -6px -6px 7px rgba(255, 255, 255, 0.9);
         }
         .neomorphic-button.white-bg:hover {
-            background-color: #f8f8f8; /* Very slight change */
+            background-color: #f8f8f8; 
             box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.05), inset -2px -2px 2px rgba(255, 255, 255, 0.8);
         }
         .neomorphic-button.white-bg:active {
@@ -85,7 +77,6 @@
             box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1), inset -3px -3px 3px rgba(255, 255, 255, 0.7);
             transform: translateY(1px);
         }
-
         nav .dropdown-menu {
             opacity: 0;
             transform: translateY(-10px);
@@ -524,6 +515,14 @@
         @media (max-width: 768px) {
             header {
                 padding: 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
             }
 
             .hero-section {
