@@ -47,97 +47,48 @@
             color: var(--color-primary-dark);
         }
 
-        /* Header & Navigation - Clean with neomorphic buttons */
-        header {
-            background-color: var(--neumorph-base-color);
-            padding: 1rem 2rem;
-            box-shadow: var(--neumorph-shadow-outset);
-            border-bottom: 1px solid var(--color-border-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav.container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        nav .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        nav .logo-container img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        nav .logo-text {
-            font-family: 'Forum', serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--color-primary-dark);
-            text-decoration: none;
-        }
-        nav #nav-toggle {
-            background: none;
-            border: none;
-            color: var(--color-primary-dark);
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--neumorph-shadow-outset);
-            transition: all 0.3s ease;
-        }
-        nav #nav-toggle:hover {
-            box-shadow: var(--neumorph-shadow-inset);
-            background-color: var(--neumorph-pressed-color);
-        }
-        nav #nav-content {
-            width: 100%;
-            display: none;
-        }
-        nav #nav-content.block {
-            display: block;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0 0;
-            text-align: center;
-        }
-        nav ul.lg\:flex {
-            display: flex;
-            margin: 0;
-        }
-        nav ul li {
-            margin: 0.5rem 0;
-        }
-        nav ul li.mr-4 {
-            margin-right: 1rem;
-        }
-        nav a {
-            color: var(--color-dark-gray);
+      
+     .neomorphic-button {
+            background-color: var(--color-accent-white);
+            color: var(--color-red);
+            border-radius: 1rem;
+            padding: 0.75rem 1.5rem;
             font-weight: 500;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            box-shadow: var(--neumorph-shadow-outset);
-            background-color: var(--neumorph-base-color);
-            font-family: 'Lato', sans-serif;
+            transition: all 0.3s ease-in-out;
+
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 8px rgba(255, 255, 255, 0.9);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
         }
-        nav a:hover {
-            color: var(--color-accent-red);
-            box-shadow: var(--neumorph-shadow-inset);
-            background-color: var(--neumorph-pressed-color);
+        .neomorphic-button:hover {
+            background-color: #ffffff;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.7);
+            transform: translateY(-2px);
         }
-        nav a:active {
-            box-shadow: var(--neumorph-shadow-inset);
-            background-color: var(--neumorph-pressed-color);
+        .neomorphic-button:active {
+            background-color: #ffffff;
+            box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.2), inset -3px -3px 3px rgba(255, 255, 255, 0.6);
+            transform: translateY(1px);
         }
+
+        .neomorphic-button.white-bg {
+            background-color: var(--color-white);
+            color: var(--color-dark-blue);
+            box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1), -6px -6px 7px rgba(255, 255, 255, 0.9);
+        }
+        .neomorphic-button.white-bg:hover {
+            background-color: #f8f8f8; /* Very slight change */
+            box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.05), inset -2px -2px 2px rgba(255, 255, 255, 0.8);
+        }
+        .neomorphic-button.white-bg:active {
+            background-color: #ececec;
+            box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1), inset -3px -3px 3px rgba(255, 255, 255, 0.7);
+            transform: translateY(1px);
+        }
+
         nav .dropdown-menu {
             opacity: 0;
             transform: translateY(-10px);
@@ -172,7 +123,6 @@
             background-color: var(--neumorph-pressed-color);
         }
 
-        /* Modern Hero Section */
         .hero-section {
             background: linear-gradient(135deg, rgba(1, 28, 64, 0.9) 0%, rgba(42, 91, 185, 0.9) 100%), 
                         url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
@@ -257,8 +207,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* Services Grid Section */
         .services-grid-section {
             padding: 7rem 2rem;
             background-color: var(--neumorph-base-color);
@@ -394,8 +342,6 @@
             background-color: #A33A24;
             box-shadow: var(--neumorph-shadow-inset);
         }
-
-        /* Why Choose Us Carousel Section */
         .why-choose-us-section {
             padding: 7rem 0;
             background-color: var(--neumorph-base-color);
@@ -487,8 +433,6 @@
             transform: scale(1.2);
             box-shadow: var(--neumorph-shadow-inset);
         }
-
-        /* Footer Section */
         footer.site-footer {
             background-color: var(--neumorph-base-color);
             color: var(--color-dark-gray);
@@ -555,8 +499,6 @@
         .social-icons a:hover {
             color: var(--color-accent-red);
         }
-
-        /* Responsive Adjustments */
         @media (max-width: 1024px) {
             .hero-content h1 {
                 font-size: 3.5rem;
@@ -633,7 +575,7 @@
                 <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
             </button>
 
-            <div id="nav-content" class="hidden w-full lg:flex lg:items-center lg:w-auto">
+            <div id="neomorphic-button" class="hidden w-full lg:flex lg:items-center lg:w-auto">
                 <ul class="text-lg lg:flex-grow lg:flex lg:justify-end">
                     <li class="mr-4"><a href="index.html">Home</a></li>
                     <li class="relative group mr-4">
